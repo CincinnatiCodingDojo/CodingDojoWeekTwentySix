@@ -1,0 +1,15 @@
+{% extends "calculator/views/templates/base.html" %}
+{% block content %}
+<div>
+<form action="/add" method="GET">
+	<input type="text" id="text1" name="number1"></input>
+	<input type="text" id="text2" name="number2"></input>
+	<input type="submit" value="Add Numbers"></input>
+</form>	
+</div>
+ <div class="row-fluid">
+    <div class="span8">
+    {{formula}} {{content}}
+    </div>
+  </div>
+{% endblock %}
