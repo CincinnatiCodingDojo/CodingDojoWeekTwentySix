@@ -14,17 +14,12 @@
 (defn calculator-page []
   (layout/render "calculator.html"))
 
-(defn calculate-result-page [number1 operation number2]
-	(layout/render "calculator.html" {:content (util/do-math (read-string number1) operation (read-string number2))
-		:formula (util/formulaPrinter operation number1 number2)}))
-
-(defn calculate-equation-result-page [equation]
-  (layout/render "calculator.html" {:content (util/parse-equation equation)
-    :formula equation}))
+(defn add-result-page [number1 number2]
+	(layout/render "calculator.html" {:content (+ (read-string number1) (read-string number2))
+		:formula (util/formulaPrinter "+" number1 number2)}))
 
 (defroutes home-routes
   (GET "/" [] (home-page))
   (GET "/about" [] (about-page))
-  (GET "/calculate" [number1 operation number2] (calculate-result-page number1 operation number2))
-  (GET "/free-form-calculate" [equation] (calculate-equation-result-page equation))
+  (GET "/add" [number1 number2] (add-result-page number1 number2))
   (GET "/calculator" [] (calculator-page)))

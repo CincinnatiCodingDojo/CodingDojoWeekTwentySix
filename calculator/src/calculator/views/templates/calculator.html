@@ -1,21 +1,11 @@
 {% extends "calculator/views/templates/base.html" %}
 {% block content %}
 <div>
-<form action="/calculate" method="GET">
+<form action="/add" method="GET">
 	<input type="text" id="text1" name="number1"></input>
-	<select id="operation" name="operation">
-		<option value="+">+</option>
-		<option value="-">-</option>
-		<option value="*">*</option>
-		<option value="/">/</option>
-	</select>
 	<input type="text" id="text2" name="number2"></input>
-	<input type="submit" value="Calculate"></input>
-</form>
-<form action="/free-form-calculate" method="GET">
-	<input type="text" id="equationText" name="equation"></input>
-	<input type="submit" value="CalculateFreeForm"></input>
-</form>		
+	<input type="submit" value="Add Numbers"></input>
+</form>	
 </div>
  <div class="row-fluid">
     <div class="span8">
